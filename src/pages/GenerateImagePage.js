@@ -16,22 +16,25 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
-const configuration = new Configuration({
-  apiKey: process.env.REACT_APP_API_KEY,
-});
-const openai = new OpenAIApi(configuration);
-
 function GenerateImagePage({ app }) {
   // Google auth
   const provider = new GoogleAuthProvider(app);
   const auth = getAuth(app);
   const [user, setUser] = useState(null);
+  const [openAIKey, setOpenAIKey] = useState();
+  const [openAI, setOpenAI] = useState();
+
 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       setUser(user);
     });
-  }, []);
+
+    const configuration = new Configuration({
+      apiKey: openAIKey || process.env.REACT_APP_API_KEY,
+    });
+    setOpenAI(new OpenAIApi(configuration));
+  }, [openAIKey]);
 
   function handleLogin() {
     signInWithRedirect(auth, provider);
@@ -46,13 +49,7 @@ function GenerateImagePage({ app }) {
         const user = result.user;
       })
       .catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        console.log(error);
       });
   }
 
@@ -87,7 +84,7 @@ function GenerateImagePage({ app }) {
         n: 1,
         size: size,
       };
-      const response = await openai.createImage(imageParameters);
+      const response = await openAI.createImage(imageParameters);
       const urlData = response.data.data[0].url;
       setImageUrl(urlData);
 
@@ -153,6 +150,7 @@ function GenerateImagePage({ app }) {
           handleLogin={handleLogin}
           handleLogout={handleLogout}
         />
+        <InputBox label={"API Key"} setAttribute={setOpenAIKey} />
       </motion.div>
     </main>
   );

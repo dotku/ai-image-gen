@@ -6,13 +6,13 @@ import { getAnalytics } from "firebase/analytics";
 
 // Analytics
 const firebaseConfig = {
-  apiKey: "AIzaSyC78gJeg8jOAgizmzl0vW0dIWvoMA-cp1s",
-  authDomain: "ai-image-generator-f4c78.firebaseapp.com",
-  projectId: "ai-image-generator-f4c78",
-  storageBucket: "ai-image-generator-f4c78.appspot.com",
-  messagingSenderId: "133932092710",
-  appId: "1:133932092710:web:cd3c257897e358703105e7",
-  measurementId: "G-G25FPHDGW5",
+  apiKey: "AIzaSyDGB6qDFIZiqKkHFq4n0PDtwV4IgDAxVsM",
+  authDomain: "auth-2e62f.firebaseapp.com",
+  projectId: "auth-2e62f",
+  storageBucket: "auth-2e62f.appspot.com",
+  messagingSenderId: "548319390831",
+  appId: "1:548319390831:web:715349f73577738117b19a",
+  measurementId: "G-Q37KRLKL19"
 };
 
 const app = initializeApp(firebaseConfig);
