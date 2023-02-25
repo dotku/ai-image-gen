@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ai-image-gen/static/css/main.aa161875.css",
-    "main.js": "/ai-image-gen/static/js/main.6a2633e2.js",
+    "main.js": "/ai-image-gen/static/js/main.b9fb6fa5.js",
     "static/media/astronaut.jpg": "/ai-image-gen/static/media/astronaut.496f0f9ec715236ca035.jpg",
     "index.html": "/ai-image-gen/index.html",
     "main.aa161875.css.map": "/ai-image-gen/static/css/main.aa161875.css.map",
-    "main.6a2633e2.js.map": "/ai-image-gen/static/js/main.6a2633e2.js.map"
+    "main.b9fb6fa5.js.map": "/ai-image-gen/static/js/main.b9fb6fa5.js.map"
   },
   "entrypoints": [
     "static/css/main.aa161875.css",
-    "static/js/main.6a2633e2.js"
+    "static/js/main.b9fb6fa5.js"
   ]
 }
